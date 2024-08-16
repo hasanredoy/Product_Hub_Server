@@ -67,7 +67,7 @@ async function run() {
 const sortOpt = {}
 if(sort=='low')sortOpt.price=1
 if(sort=='high')sortOpt.price=-1
-if(sort=='new')sortOpt.createdAt=1
+if(sort=='new')sortOpt.createdAt=-1
       // console.log({brand,category,maxPrice,minPrice});
 
       // get products
