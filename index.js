@@ -48,6 +48,7 @@ async function run() {
       const minPrice = parseInt(req.query?.minPrice)
       const maxPrice = parseInt(req.query?.maxPrice)
       const search = req.query?.search
+      const sort = req.query?.sort
       console.log(search);
 
 
