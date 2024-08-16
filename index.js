@@ -40,6 +40,8 @@ async function run() {
 
     // all  items routes 
     app.get("/products",async(req,res)=>{
+      const size = parseInt(req.query.size)
+      const page = parseInt(req.query.page)
       // get products
       const result = await productCollections.find().toArray()
       // send products to client 
