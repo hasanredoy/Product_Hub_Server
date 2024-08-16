@@ -45,6 +45,13 @@ async function run() {
       // send products to client 
       res.send(result)
     })
+    // all  items count route 
+    app.get("/products-count",async(req,res)=>{
+      // get products count
+      const count = await productCollections.estimatedDocumentCount()
+      // send products to client 
+      res.send()
+    })
 
     // users collections routes 
     app.post("/users", async (req, res) => {
