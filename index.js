@@ -40,8 +40,20 @@ async function run() {
 
     // all  items routes 
     app.get("/products",async(req,res)=>{
+      // get different values of queries 
       const size = parseInt(req.query.size)
       const page = parseInt(req.query.page)
+      const brand = req.query?.brand
+      const category = req.query?.category
+      const minPrice = parseInt(req.query?.minPrice)
+      const maxPrice = parseInt(req.query?.maxPrice)
+      let query = {}
+      if(brand) query.brand= brand
+      if(brand) query.category= brand
+      if(brand) query.brand= brand
+      if(brand) query.brand= brand
+
+
       // get products
       const result = await productCollections.find().limit(size).skip(size*page).toArray()
       // send products to client 
