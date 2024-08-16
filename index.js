@@ -64,11 +64,14 @@ async function run() {
       if (minPrice && maxPrice) {
         query.price = { $gte: parseFloat(minPrice), $lte: parseFloat(maxPrice) };
       }
-
+const sortOpt = {}
+if(sort=='low')sortOpt.price=1
+if(sort=='high')sortOpt.price=-1
+if(sort=='new')sortOpt.createdAt=1
       // console.log({brand,category,maxPrice,minPrice});
 
       // get products
-      const result = await productCollections.find(query).limit(size).skip(size*page).toArray()
+      const result = await productCollections.find(query).limit(size).skip(size*page).sort(sortOpt).toArray()
       // console.log(result);
       // send products to client 
       res.send(result)
