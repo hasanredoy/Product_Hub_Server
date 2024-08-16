@@ -50,7 +50,7 @@ async function run() {
       // get products count
       const count = await productCollections.estimatedDocumentCount()
       // send products to client 
-      res.send()
+      res.send({count})
     })
 
     // users collections routes 
