@@ -43,7 +43,7 @@ async function run() {
       const size = parseInt(req.query.size)
       const page = parseInt(req.query.page)
       // get products
-      const result = await productCollections.find().toArray()
+      const result = await productCollections.find().limit(size).skip(size*page).toArray()
       // send products to client 
       res.send(result)
     })
