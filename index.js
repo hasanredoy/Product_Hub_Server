@@ -40,7 +40,9 @@ async function run() {
 
     // all  items routes 
     app.get("/products",async(req,res)=>{
+      // get products
       const result = await productCollections.find().toArray()
+      // send products to client 
       res.send(result)
     })
 
