@@ -10,7 +10,9 @@ const app = express()
 
 app.use(express.json())
 
-app.use(cors())
+app.use(cors({
+  origin:['https://product-hub-e9ca3.firebaseapp.com','https://product-hub-e9ca3.firebaseapp.com']
+}))
 
 
 app.use(cookieParser());
